@@ -15,6 +15,8 @@
     <div id='verify-wrap'>
       <div id='verify-details'>
         <p id='dc1k1'>Verify Details and Send!</p>
+        <div id='mkdmh'></div>
+        <button id='verify-rkyev'>Send!</button>
       </div>
     </div>
     <h1>Send a Invite</h1>
@@ -22,14 +24,17 @@
     <div id='hx3t3'>
       <div id='left'>
         <p class='label-b960l'>Sender Email</p>
-        <input type='email' placeholder='Sender Email' class='input-0lugk'>
+        <input type='email' placeholder='Sender Email' class='input-0lugk' id='input-csc2e'>
         <p class='label-b960l'>Sender Name</p>
-        <input type='text' placeholder='Sender Name' class='input-0lugk'>
+        <input type='text' placeholder='Sender Name' class='input-0lugk' id='input-5ytqq'>
         <div class='divider-i9zro'></div>
         <p class='label-b960l'>Recipient Email</p>
-        <input type='email' placeholder='Recipient Email' class='input-0lugk'>
+        <input type='email' placeholder='Recipient Email' class='input-0lugk' id='input-8tka6'>
         <p class='label-b960l'>Recipient Name</p>
-        <input type='text' placeholder='Recipient Name' class='input-0lugk'>
+        <input type='text' placeholder='Recipient Name' class='input-0lugk' id='input-m07mt'>
+        <div class='divider-i9zro'></div>
+        <p class='label-b960l'>Notes</p>
+        <texarea placeholder='Notes' id='input-vi331'></texarea>
         <div class='divider-i9zro'></div>
         <p class='label-b960l'>Suggest a Time</p>
         <button id='button-iymo1'>New Suggestion</button>
@@ -42,16 +47,16 @@
 
           <!-- INCLUDE THINGS ON CLIENT SIDE THAT TELLS THEM, WE WILL BE MEETING IN PERSON WITH A HOUSE ICON, ETC. INCLUDE TIME ZONE-->
         </div>
-        
+
+
+        <button id='rev-77go1'>Review and Send!</button>
       </div>
       <div id='right'>
-        <p>Suggested Times</p>
-        <div class='suggest-preview'>
-          <span id='suggest-date'></span>
-          <span id='suggest-time'></span>
-        </div>
+        <p id='label-x7q06'>Suggested Times</p>
+        <div id='suggested-timeslist'></div>
       </div>
     </div>
+    
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js'></script>
