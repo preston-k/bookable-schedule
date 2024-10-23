@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+#error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: red;
+  display: none;
+}
+#main-calendar {
+  display: flex;
+}
+#loader-wrap {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+  display: none; /* REMOVE IN PROD VERSION AFTER CALENDAR LOADS */
+}
+.calendar-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#loader-innerwrap {
+  width: 50vw;
+  height: 40vh;
+  background-color: rgb(255,255,255);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weekwrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+}
+.date-box {
+  width: 9vw;
+  height: 9vw;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: flex-end;
+}
+.shadow-box {
+  background-color: lightgrey;
+  pointer-events: none;
+  user-select: none;
+}
+.nb-right {
+  border-right: none !important;
+}
+#suggested {
+  width: 200px;
+  border: 2px solid black;
+}
+.datebox-day {
+  width: 3vw;
+  height: 3vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+.daylabel {
+  width: 9vw;
+  text-align: center;
+}
+#labelwrap {
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+}
+#aF4qd {
+  width: 100px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+#kJD9 {
+  font-size: 80px;
+  color: white;
+  margin: 0;
+  text-decoration: underline;
+}
+#aUFM {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#img-3zmf {
+  width: 300px;
+  height: 300px;
+}
+#Df8m {
+  font-size: 40px;
+  font-weight: 800;
+  width: 100vw;
+  text-align: center;
+}

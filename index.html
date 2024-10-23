@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Bookable Schedule</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins'/>
+  <link rel='icon' href='https://cdn.prestonkwei.com/personalwebsitefavicon.png'>
+  <link href='style.css' rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href='https://cdn.prestonkwei.com/basecode/basecss.css'>
+</head>
+<body>
+  <div id='main-calendar'>
+    <div id='suggested'>
+      <p><span id='refname'></span> suggested the following times:</p>
+    </div>
+    <div class='calendar-wrapper'>
+      <div id='Df8m'></div>
+      <div id='labelwrap'>
+        <div class='daylabel'>Sunday</div>
+        <div class='daylabel'>Monday</div>
+        <div class='daylabel'>Tuesday</div>
+        <div class='daylabel'>Wednesday</div>
+        <div class='daylabel'>Thursday</div>
+        <div class='daylabel'>Friday</div>
+        <div class='daylabel'>Saturday</div>
+      </div>
+      
+      <div class='weekwrap' id='weekwrap-1'>
+        <div class='date-box' id='w1d1-outer'>
+          <div class='datebox-day' id='w1d1-inner'></div>
+        </div>
+        <div class='date-box' id='w1d2-outer'>
+          <div class='datebox-day' id='w1d2-inner'></div>
+        </div>
+        <div class='date-box' id='w1d3-outer'>
+          <div class='datebox-day' id='w1d3-inner'></div>
+        </div>
+        <div class='date-box' id='w1d4-outer'>
+          <div class='datebox-day' id='w1d4-inner'></div>
+        </div>
+        <div class='date-box' id='w1d5-outer'>
+          <div class='datebox-day' id='w1d5-inner'></div>
+        </div>
+        <div class='date-box' id='w1d6-outer'>
+          <div class='datebox-day' id='w1d6-inner'></div>
+        </div>
+        <div class='date-box nb-right' id='w1d7-outer'>
+          <div class='datebox-day' id='w1d7-inner'></div>
+        </div>
+      </div>
+      <div class='weekwrap' id='weekwrap-2'>
+        <div class='date-box' id='w2d1-outer'>
+          <div class='datebox-day' id='w2d1-inner'></div>
+        </div>
+        <div class='date-box' id='w2d2-outer'>
+          <div class='datebox-day' id='w2d2-inner'></div>
+        </div>
+        <div class='date-box' id='w2d3-outer'>
+          <div class='datebox-day' id='w2d3-inner'></div>
+        </div>
+        <div class='date-box' id='w2d4-outer'>
+          <div class='datebox-day' id='w2d4-inner'></div>
+        </div>
+        <div class='date-box' id='w2d5-outer'>
+          <div class='datebox-day' id='w2d5-inner'></div>
+        </div>
+        <div class='date-box' id='w2d6-outer'>
+          <div class='datebox-day' id='w2d6-inner'></div>
+        </div>
+        <div class='date-box nb-right' id='w2d7-outer'>
+          <div class='datebox-day' id='w2d7-inner'></div>
+        </div>
+      </div>
+      <div class='weekwrap' id='weekwrap-3'>
+        <div class='date-box' id='w3d1-outer'>
+          <div class='datebox-day' id='w3d1-inner'></div>
+        </div>
+        <div class='date-box' id='w3d2-outer'>
+          <div class='datebox-day' id='w3d2-inner'></div>
+        </div>
+        <div class='date-box' id='w3d3-outer'>
+          <div class='datebox-day' id='w3d3-inner'></div>
+        </div>
+        <div class='date-box' id='w3d4-outer'>
+          <div class='datebox-day' id='w3d4-inner'></div>
+        </div>
+        <div class='date-box' id='w3d5-outer'>
+          <div class='datebox-day' id='w3d5-inner'></div>
+        </div>
+        <div class='date-box' id='w3d6-outer'>
+          <div class='datebox-day' id='w3d6-inner'></div>
+        </div>
+        <div class='date-box nb-right' id='w3d7-outer'>
+          <div class='datebox-day' id='w3d7-inner'></div>
+        </div>
+      </div>
+      <div class='weekwrap' id='weekwrap-4'>
+        <div class='date-box' id='w4d1-outer'>
+          <div class='datebox-day' id='w4d1-inner'></div>
+        </div>
+        <div class='date-box' id='w4d2-outer'>
+          <div class='datebox-day' id='w4d2-inner'></div>
+        </div>
+        <div class='date-box' id='w4d3-outer'>
+          <div class='datebox-day' id='w4d3-inner'></div>
+        </div>
+        <div class='date-box' id='w4d4-outer'>
+          <div class='datebox-day' id='w4d4-inner'></div>
+        </div>
+        <div class='date-box' id='w4d5-outer'>
+          <div class='datebox-day' id='w4d5-inner'></div>
+        </div>
+        <div class='date-box' id='w4d6-outer'>
+          <div class='datebox-day' id='w4d6-inner'></div>
+        </div>
+        <div class='date-box nb-right' id='w4d7-outer'>
+          <div class='datebox-day' id='w4d7-inner'></div>
+        </div>
+      </div>
+      <div class='weekwrap' id='weekwrap-5'>
+        <div class='date-box' id='w5d1-outer'>
+          <div class='datebox-day' id='w5d1-inner'></div>
+        </div>
+        <div class='date-box' id='w5d2-outer'>
+          <div class='datebox-day' id='w5d2-inner'></div>
+        </div>
+        <div class='date-box' id='w5d3-outer'>
+          <div class='datebox-day' id='w5d3-inner'></div>
+        </div>
+        <div class='date-box' id='w5d4-outer'>
+          <div class='datebox-day' id='w5d4-inner'></div>
+        </div>
+        <div class='date-box' id='w5d5-outer'>
+          <div class='datebox-day' id='w5d5-inner'></div>
+        </div>
+        <div class='date-box' id='w5d6-outer'>
+          <div class='datebox-day' id='w5d6-inner'></div>
+        </div>
+        <div class='date-box nb-right' id='w5d7-outer'>
+          <div class='datebox-day' id='w5d7-inner'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='loader-wrap'>
+    <div id='loader-innerwrap'>
+      <div id='aF4qd'></div>
+    </div>
+  </div>
+  <div id='error'>
+    <p id='kJD9'>Error!</p>
+    <img src='https://cdn.prestonkwei.com/circlewithcross.png' id='img-3zmf'>
+    <p id='aUFM'>Sorry, you are attempting to access a page that you don't have access to. Either you clicked a broken link, or the owner has taken it down.</p>
+
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js'></script>
+  <script src='https://kit.fontawesome.com/c947e2382a.js' crossorigin='anonymous'></script>
+  <script src='https://cdn.prestonkwei.com/code/dynamicBase.js'></script> 
+  <script src='script.js'></script>
+</head>
+</body>
+</html>
