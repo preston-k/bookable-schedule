@@ -44,7 +44,12 @@ async function checkInvite() {
 
     let suggestList
     if (inviteFound) {
+      
       const inviteSnapshot = await database.ref(`/invites/${urlParams.get('id')}/`).once('value')
+
+      setTimeout(() => {
+        document.querySelector('#loader-wrap').style.display = 'flex'
+      }, '1000')
       info = inviteSnapshot.val()
       to = info['details']['to']
       from = info['details']['from']

@@ -41,6 +41,8 @@ async function checkInvite() {
       document.querySelector('#fillable-2z4aj').innerHTML = data.suggest[passfrom].time
 
       document.querySelector('#fillable-yiumm').innerHTML = data.suggest[passfrom].notes
+
+      document.querySelector('#fillable-jdmrg').innerHTML = data.details.eTo
       
 
     } else {
