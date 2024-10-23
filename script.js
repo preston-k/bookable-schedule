@@ -48,8 +48,8 @@ async function checkInvite() {
       const inviteSnapshot = await database.ref(`/invites/${urlParams.get('id')}/`).once('value')
 
       setTimeout(() => {
-        document.querySelector('#loader-wrap').style.display = 'flex'
-      }, '1000')
+        document.querySelector('#loader-wrap').style.display = 'none'
+      }, '1000') // Save time in case extra things load not in an await
       info = inviteSnapshot.val()
       to = info['details']['to']
       from = info['details']['from']
