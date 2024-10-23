@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Send an Invite</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins'/>
+  <link rel='icon' href='https://cdn.prestonkwei.com/personalwebsitefavicon.png'>
+  <link href='style.css' rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href='https://cdn.prestonkwei.com/basecode/basecss.css'>
+</head>
+<body>
+  <div id='a5tqa'>
+    <div id='verify-wrap'>
+      <div id='verify-details'>
+        <p id='dc1k1'>Verify Details and Send!</p>
+      </div>
+    </div>
+    <h1>Send a Invite</h1>
+    <p>Invite ID: <span id='h5j3l'></span></p>
+    <div id='hx3t3'>
+      <div id='left'>
+        <p class='label-b960l'>Sender Email</p>
+        <input type='email' placeholder='Sender Email' class='input-0lugk'>
+        <p class='label-b960l'>Sender Name</p>
+        <input type='text' placeholder='Sender Name' class='input-0lugk'>
+        <div class='divider-i9zro'></div>
+        <p class='label-b960l'>Recipient Email</p>
+        <input type='email' placeholder='Recipient Email' class='input-0lugk'>
+        <p class='label-b960l'>Recipient Name</p>
+        <input type='text' placeholder='Recipient Name' class='input-0lugk'>
+        <div class='divider-i9zro'></div>
+        <p class='label-b960l'>Suggest a Time</p>
+        <button id='button-iymo1'>New Suggestion</button>
+        <div id='suggestionbox'>
+          <form id='suggest-date-time'>
+            <input type='date' id='input-2h940' class='datetime-c60po'>
+            <input type='time' id='input-xp65i' class='datetime-c60po'>
+            <button type='submit'>></button>
+          </form>
+
+          <!-- INCLUDE THINGS ON CLIENT SIDE THAT TELLS THEM, WE WILL BE MEETING IN PERSON WITH A HOUSE ICON, ETC. INCLUDE TIME ZONE-->
+        </div>
+        
+      </div>
+      <div id='right'>
+        <p>Suggested Times</p>
+        <div class='suggest-preview'>
+          <span id='suggest-date'></span>
+          <span id='suggest-time'></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js'></script>
+  <script src='https://kit.fontawesome.com/c947e2382a.js' crossorigin='anonymous'></script>
+  <script src='send.js'></script>
+</head>
+</body>
+</html>

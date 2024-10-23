@@ -1,3 +1,14 @@
+const firebaseConfig = {
+  apiKey: 'AIzaSyDaQPwR1rn633ZV-F6fb3ZY12_aT8d3BxE',
+  authDomain: 'bookableschedule.firebaseapp.com',
+  projectId: 'bookableschedule',
+  storageBucket: 'bookableschedule.appspot.com',
+  messagingSenderId: '891298873089',
+  appId: '1:891298873089:web:de053844e86322f8456500'
+}
+firebase.initializeApp(firebaseConfig)
+let database = firebase.database()
+
 function accessDenied() {
   document.querySelector('#main-calendar').innerHTML = ''
   document.querySelector('#error').style.display = 'flex'
@@ -16,41 +27,46 @@ let daysInMonth = dayCount(year, month)
 if (urlParams.get('id') == '' || urlParams.get('id') == null) {
   accessDenied()
 } else {
-  date = new Date().toISOString().split('T')[0]
-  let i = 1
-  let monthstart = new Date(`${monthWord} 1, ${year} 12:00:00`).getDay()
-  let week1 = new Array(7).fill(0)
-  let week2 = new Array(7).fill(0)
-  let week3 = new Array(7).fill(0)
-  let week4 = new Array(7).fill(0)
-  let week5 = new Array(7).fill(0)
-  for (let j = monthstart; j < 7 && i <= daysInMonth; j++) {
-    week1[j] = i++
-  }
-  for (let j = 0; j < 7 && i <= daysInMonth; j++) {
-    week2[j] = i++
-  }
-  for (let j = 0; j < 7 && i <= daysInMonth; j++) {
-    week3[j] = i++
-  }
-  for (let j = 0; j < 7 && i <= daysInMonth; j++) {
-    week4[j] = i++
-  }
-  for (let j = 0; j < 7 && i <= daysInMonth; j++) {
-    week5[j] = i++
-  }
-  for (let week = 1; week <= 5; week++) {
-    console.log(week)
-    let weekData = window[`week${week}`]
-    for (let day = 1; day <= 7; day++) {
-      let value = weekData[day - 1]
-      let outerElement = document.querySelector(`#w${week}d${day}-outer`)
-      let innerElement = document.querySelector(`#w${week}d${day}-inner`)
-      if (value === 0) {
-        outerElement.classList.add('shadow-box')
-      } else if (value !== undefined) {
-        innerElement.innerHTML = value
+  database.ref('/invites').once('value', snapshot => {
+    snapshot.forEach(childSnapshot => {
+      console.log(childSnapshot.key)
+      if (childSnapshot.key == urlParams.get('id')) {
+        date = new Date().toISOString().split('T')[0]
+        let i = 1
+        let monthstart = new Date(`${monthWord} 1, ${year} 12:00:00`).getDay()
+        let week1 = new Array(7).fill(0)
+        let week2 = new Array(7).fill(0)
+        let week3 = new Array(7).fill(0)
+        let week4 = new Array(7).fill(0)
+        let week5 = new Array(7).fill(0)
+        let weeks = [week1, week2, week3, week4, week5];
+        console.log(monthstart)
+        let currentDay = 1;
+        for (let i = monthstart; i < 7 && currentDay <= daysInMonth; i++) {
+          week1[i] = currentDay++;
+        }
+        for (let weekNum = 1; weekNum < 5 && currentDay <= daysInMonth; weekNum++) {
+          for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
+            weeks[weekNum][i] = currentDay++;
+          }
+        }
+      
+        for (let weekNum = 0; weekNum < 5; weekNum++) {
+          for (let day = 0; day < 7; day++) {
+            const outerElement = document.querySelector(`#w${weekNum + 1}d${day + 1}-outer`);
+            const innerElement = document.querySelector(`#w${weekNum + 1}d${day + 1}-inner`);
+            if (weeks[weekNum][day] === 0) {
+              outerElement.classList.add('shadow-box');
+            } else {
+              innerElement.innerHTML = weeks[weekNum][day];
+            }
+          }
+        }
+        console.log(weeks)
+      } else {
+        accessDenied()
       }
-    }
-  }
+    })
+  })
+  
 }
