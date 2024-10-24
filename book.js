@@ -12,6 +12,7 @@ let database = firebase.database()
 function accessDenied() {
   document.querySelector('#passthrough-y354q').innerHTML = ''
   document.querySelector('#error').style.display = 'flex'
+  document.querySelector('#loader-wrap').style.display = 'none'
   document.title = 'Access Denied'
 }
 const urlParams = new URLSearchParams(window.location.search)
@@ -20,6 +21,9 @@ async function checkInvite() {
   if (urlParams.get('passthrough') == '' || urlParams.get('passthrough') == null || urlParams.get('passfrom') == '' || urlParams.get('passfrom') == null) {
     accessDenied()
   } else {
+    setTimeout(() => {
+      document.querySelector('#loader-wrap').style.display = 'none'
+    }, '875')
     const snapshot = await database.ref('/invites').once('value')
     let inviteFound = false
     snapshot.forEach(childSnapshot => {

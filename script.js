@@ -11,6 +11,7 @@ let database = firebase.database()
 let offset = -(new Date().getTimezoneOffset() / 60)
 function accessDenied() {
   document.querySelector('#error').style.display = 'flex'
+  document.querySelector('#loader-wrap').style.display = 'none'
   document.title = 'Access Denied'
 }
 const dayCount = (year, month) => new Date(year, month, 0).getDate()
@@ -48,7 +49,7 @@ async function checkInvite() {
 
       setTimeout(() => {
         document.querySelector('#loader-wrap').style.display = 'none'
-      }, '1000') // Save time in case extra things load not in an await
+      }, '875') // Save time in case extra things load not in an await
       info = inviteSnapshot.val()
       console.log(info['hide'])
       if (info['hide'] == true) {

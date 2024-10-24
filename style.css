@@ -518,9 +518,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30vw;
-  height: 30vw;
-  transform: translateX(-100px) translateY(-50px);
+  width: 33vw;
+  height: 33vw;
+  transform: translateX(-200px) translateY(-50px);
   border-radius: 81% 19% 30% 70% / 73% 74% 26% 27% ;
   background: rgb(34,193,195);
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.578890931372549) 100%);
