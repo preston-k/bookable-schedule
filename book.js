@@ -55,7 +55,11 @@ checkInvite()
 
 document.querySelector('#button-hp8tv').addEventListener('click', () => {
   console.log('book')
+// 
 
+  database.ref(`/invites/${urlParams.get('passthrough')}/`).update({
+    hide: true
+  })
   // FINAL STEP NOTHING BELOW
 
   window.location.replace(`/confirmed.html?passthrough=${JSON.stringify(data)}`)

@@ -10,7 +10,6 @@ firebase.initializeApp(firebaseConfig)
 let database = firebase.database()
 let offset = -(new Date().getTimezoneOffset() / 60)
 function accessDenied() {
-  document.querySelector('#main-calendar').innerHTML = ''
   document.querySelector('#error').style.display = 'flex'
   document.title = 'Access Denied'
 }
@@ -51,6 +50,11 @@ async function checkInvite() {
         document.querySelector('#loader-wrap').style.display = 'none'
       }, '1000') // Save time in case extra things load not in an await
       info = inviteSnapshot.val()
+      console.log(info['hide'])
+      if (info['hide'] == true) {
+        document.querySelector('#used').style.display='flex'
+        document.querySelector('#main-calendar').innerHTML = ''
+      }
       to = info['details']['to']
       from = info['details']['from']
       console.log(info)

@@ -190,9 +190,18 @@ body {
   flex-direction: column;
 }
 #used {
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
   width: 100vw;
   height: 100vh;
-  /* background-color: ; */
+  background-color: #D68000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
 }
 #verify-wrap {
   width: 100vw;
@@ -581,4 +590,10 @@ body {
 #img-exox1 {
   width: 250px;
   height: 250px;
+}
+#Op8t {
+  font-size: 80px;
+  color: white;
+  margin: 0;
+  text-decoration: underline;
 }
