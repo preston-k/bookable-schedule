@@ -189,6 +189,11 @@ body {
   align-items: center;
   flex-direction: column;
 }
+#used {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: ; */
+}
 #verify-wrap {
   width: 100vw;
   height: 100vh;
@@ -430,9 +435,11 @@ body {
   display: flex;
 }
 .h2l8c {
-  margin: 0 7px;
+  margin: 10px 0;
   font-weight: 800;
   text-decoration: underline;
+  text-align: center !important;
+  
 }
 .sec03 {
   width: 100%;
@@ -475,7 +482,7 @@ body {
   width: 70%;
 }
 #fillable-yiumm {
-  text-align: left;
+  text-align: center;
   padding: 0 7px;
 }
 #bg-kjg4p {
@@ -570,4 +577,8 @@ body {
   width: 250px;
   height: 250px;
   margin: 20px;
+}
+#img-exox1 {
+  width: 250px;
+  height: 250px;
 }

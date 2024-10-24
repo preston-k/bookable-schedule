@@ -85,6 +85,7 @@ document.querySelector('#verify-rkyev').addEventListener('click', () => {
   database.ref(`/invites/${inviteid}/`).update({
     details,
     ts: new Date(),
+    hide: false
   })
   document.querySelector('#verify-wrap').style.display='none'
   // window.location.reload()
