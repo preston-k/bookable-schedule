@@ -72,6 +72,10 @@ document.querySelector('#rev-77go1').addEventListener('click', () => {
   details['eTo'] = document.querySelector('#input-8tka6').value
   details['eFrom'] = document.querySelector('#input-csc2e').value
   details['from'] = document.querySelector('#input-5ytqq').value
+  details['notes'] = document.querySelector('#input-tnl3p').value
+  if (document.querySelector('#input-tnl3p').value == '') {
+    details['notes'] = 'No notes were left!'
+  }
   console.log(details)
   document.querySelector('#mkdmh').innerHTML = tree(details)
   document.querySelector('#verify-wrap').style.display = 'flex'

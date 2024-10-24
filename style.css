@@ -148,6 +148,13 @@ body {
   display: flex;
   justify-content: center;
 }
+.confetti {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  /* border-radius: 4px; */
+}
 .suggested-timebox {
   width: 100%;
   border: 2px solid black;
@@ -158,7 +165,7 @@ body {
   margin-bottom: 15px;
 }
 .suggested-timebox:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
   transition: transform 0.2s ease-out;
 }
 .suggested-timebox-time, .suggested-timebox-date {
@@ -212,9 +219,12 @@ body {
   width: 50vw;
   border: 2px solid black;
   border-radius: 15px;
+  background-color: white;
 }
 #passthrough-y354q {
   width: 100vw;
+  height: 100vh;
+  background-color: rgb(255,255,255,0.3);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -255,6 +265,8 @@ body {
 }
 #psaof {
   margin-bottom: 10px;
+  font-size: 16px;
+  padding: 0 20px;
 }
 #tzajg {
   /* width: 100vw; */
@@ -317,6 +329,7 @@ body {
   padding-right: 5px;
   border-right: 2px solid black;
   margin-right: 5px;
+  
 }
 #a5tqa {
   display: flex;
@@ -367,6 +380,9 @@ body {
   font-size: 18px;
   text-decoration: underline;
 }
+#fillable-jdmrg {
+  text-decoration: underline;
+}
 .tree-es1rn {
   margin: 0;
   height: max-content;
@@ -404,15 +420,17 @@ body {
 }
 #right-sjzkt {
   width: 50%;
+  border-left: 1px solid black;
 }
 #left-l4ikc {
   width: 50%;
+  border-right: 1px solid black;
 }
 #r808p {
   display: flex;
 }
 .h2l8c {
-  margin: 0 15px;
+  margin: 0 7px;
   font-weight: 800;
   text-decoration: underline;
 }
@@ -425,6 +443,7 @@ body {
 }
 #final-yolve {
   width: 50vw;
+  background-color: white;
   border: 2px solid black;
   border-radius: 15px;
   margin-top: 20px;
@@ -444,4 +463,111 @@ body {
   font-weight: 800;
   text-decoration: underline;
   margin: 10px 0;
+}
+.bl-eznf3 {
+  border-left: 2px solid black;
+}
+.br-6c6u9 {
+  border-bottom: 2px solid black;
+}
+
+#input-tnl3p {
+  width: 70%;
+}
+#fillable-yiumm {
+  text-align: left;
+  padding: 0 7px;
+}
+#bg-kjg4p {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -9999 !important;
+  /* background-color: blue; */
+}
+#bg-n9d9l {
+  /* opacity: 0.8; */
+  height: 40vw;
+  width: 40vw;
+  transform: rotate(49deg) translate(300px, 18px);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+  background: rgb(63,94,251);
+  background: linear-gradient(276deg, rgba(63,94,251,1) 0%, rgba(252,70,107,0.5228685224089635) 100%);
+  position: fixed;
+  bottom: -10px;
+  right: 0;
+}
+#bg-bm7m2 {
+  /* opacity: 0.8; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 30vw;
+  transform: translateX(-100px) translateY(-50px);
+  border-radius: 81% 19% 30% 70% / 73% 74% 26% 27% ;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.578890931372549) 100%);
+}
+#bg-bgn5o {
+  position: fixed;
+  transform: rotate(170deg) translate(40px, -30px);
+  bottom: 0;
+  left: 0;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 45% 55% 12% 88% / 67% 33% 21% 79%;
+  background: rgb(131,58,180);
+  background: linear-gradient(222deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+#bg-c10rs {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 33vw;
+  height: 33vw;
+  background: linear-gradient(45deg, #00c6ff 0%,#0072ff 50%, #7a2fff 100%);
+  border-radius: 25% 65% 35% 75% / 45% 55% 40% 60%;
+  transform: translate(200px, -20px);
+}
+#u526h {
+  font-size: 40px;
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#content-oqhnd {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#r4zy1 {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+}
+#button-hp8tv {
+  width: 200px;
+  text-align: center;
+  margin: 20px;
+  height: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #008000;
+  transition: .2s ease-out;
+  user-select: none;
+}
+#button-hp8tv:hover {
+  transform: scale(1.01);
+}
+#img-gtmk9 {
+  width: 250px;
+  height: 250px;
+  margin: 20px;
 }

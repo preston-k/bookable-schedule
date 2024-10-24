@@ -40,7 +40,7 @@ async function checkInvite() {
       document.querySelector('#fillable-186yh').innerHTML = data.suggest[passfrom].date
       document.querySelector('#fillable-2z4aj').innerHTML = data.suggest[passfrom].time
 
-      document.querySelector('#fillable-yiumm').innerHTML = data.suggest[passfrom].notes
+      document.querySelector('#fillable-yiumm').innerHTML = data.details.notes
 
       document.querySelector('#fillable-jdmrg').innerHTML = data.details.eTo
       
@@ -51,3 +51,12 @@ async function checkInvite() {
   }
 }
 checkInvite()
+
+
+document.querySelector('#button-hp8tv').addEventListener('click', () => {
+  console.log('book')
+
+  // FINAL STEP NOTHING BELOW
+
+  window.location.replace(`/confirmed.html?passthrough=${JSON.stringify(data)}`)
+})
