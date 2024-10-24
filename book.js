@@ -36,6 +36,9 @@ async function checkInvite() {
       const inviteSnapshot = await database.ref(`/invites/${urlParams.get('passthrough')}/`).once('value')
       data = inviteSnapshot.val()
       console.log(data)
+      if (data.hide == true) {
+        window.location.href = `/?id=${passfrom}`
+      }
       
       document.querySelector('#fillable-d49ay').innerHTML = data.details.from
       document.querySelector('#fillable-q7f4w').innerHTML = data.details.from
@@ -59,7 +62,9 @@ checkInvite()
 
 document.querySelector('#button-hp8tv').addEventListener('click', () => {
   console.log('book')
-// 
+  database.ref(`/invites/${urlParams.get('passthrough')}/suggest/${urlParams.get('passfrom')}`).update({
+    booked: true
+  })
 
   database.ref(`/invites/${urlParams.get('passthrough')}/`).update({
     hide: true
