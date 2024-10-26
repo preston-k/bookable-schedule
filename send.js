@@ -80,7 +80,9 @@ document.querySelector('#rev-77go1').addEventListener('click', () => {
   document.querySelector('#mkdmh').innerHTML = tree(details)
   document.querySelector('#verify-wrap').style.display = 'flex'
 })
-document.querySelector('#verify-rkyev').addEventListener('click', () => {
+let invitelist
+
+document.querySelector('#verify-rkyev').addEventListener('click', async () => {
   console.log('send')
   database.ref(`/invites/${inviteid}/`).update({
     details,
@@ -88,5 +90,30 @@ document.querySelector('#verify-rkyev').addEventListener('click', () => {
     hide: false
   })
   document.querySelector('#verify-wrap').style.display='none'
+  const snapshot = await database.ref(`/invites/${inviteid}/`).once('value')
+  console.log(snapshot.val().suggest)
+  Object.values(snapshot.val().suggest).forEach(obj => {
+    if (obj != undefined && obj != null) {
+      console.log(obj.id)
+      invitelist += `<a href='https://schedule.prestonkwei.com/book.html?passthrough=${inviteid}&action=book&passfrom=${obj.id}' style='text-decoration: none; color: black; all: unset; display: block;'> <div style='width: 100%; border: 2px solid black; border-radius: 10px; position: relative; cursor: pointer; transition: transform 0.2s ease-out; margin-bottom: 15px;'> <div style='display: flex; align-items: center; height: 50px;'> <img src='https://cdn.prestonkwei.com/calendaricon-black-small.png' alt='Calendar Icon' draggable='false' style='width: 50px; height: 50px; border-right: 2px solid black; margin-right: 5px;'> <p><span>${obj.date}</span></p> </div> <div style='display: flex; align-items: center; height: 50px;'> <img src='https://cdn.prestonkwei.com/clockicon-black-small.png' alt='Clock Icon' draggable='false' style='width: 50px; height: 50px; border-right: 2px solid black; margin-right: 5px;'> <p><span>${obj.time}</span></p> </div> </div> </a>`
+    }
+  })
+  console.log(invitelist)
+  const data = new FormData()
+  data.set('sendto', document.querySelector('#input-8tka6').value)
+  data.set('from', document.querySelector('#input-csc2e').value)
+  data.set('subject', `${document.querySelector('#input-5ytqq').value} has suggested meeting sometime soon!`)
+  data.set(
+    'html',
+    `<!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> </head> <body style='font-family: system-ui, sans-serif; background-color: #7EC8E3; margin: 0; padding: 20px;'> <table width='100%' cellspacing='0' cellpadding='0' border='0' style='background-color: #7EC8E3; padding: 20px;'> <tr> <td align='center'> <table width='600' cellspacing='0' cellpadding='20' border='0' style='background-color: white; border-radius: 8px;'> <tr></tr> <tr> <td style='font-size: 16px; line-height: 1.6;'> <p>Hi, ${document.querySelector('#input-m07mt').value}!</p><p>${document.querySelector('#input-5ytqq').value} would like to meet with you, and has suggested the following times.</p> ${invitelist} </td> </tr> <tr> <td style='font-family: system-ui, sans-serif; font-size: 10px; text-align: center;'> <hr> <p>This email was sent on behalf of ${document.querySelector('#input-csc2e').value} who sent you this invite.</p> <p>PrestonKwei.com ⋅ PO Box 20987 ⋅ Oakland, CA 94620</p> <p>This is an unmonitored email address. Responses will not be received.</p> <a href='https://prestonkwei.com'><p>prestonkwei.com</p></a> </td> </tr> </table> </td> </tr> </table> </body> </html>`.replace(/undefined/g, '')
+  )
+  data.set(
+    'content',
+    `Sorry, this email didn't format correctly. Please contact the person who sent you this for help and more information. You can delete this email (or keep it, we won't mind).\n\nERR: html fail to content.`
+  )
+  fetch('https://emailserver.prestonkwei.com/email', {
+    method: 'post',
+    body: data,
+  }).catch(() => {})
   // window.location.reload()
 })
