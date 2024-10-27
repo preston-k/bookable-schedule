@@ -61,6 +61,7 @@ checkInvite()
 
 
 document.querySelector('#button-hp8tv').addEventListener('click', async () => {
+  document.querySelector('#loader-wrap').style.display = 'flex'
   console.log('book')
   database.ref(`/invites/${urlParams.get('passthrough')}/suggest/${urlParams.get('passfrom')}`).update({
     booked: true
