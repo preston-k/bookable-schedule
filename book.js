@@ -82,7 +82,7 @@ document.querySelector('#button-hp8tv').addEventListener('click', async () => {
     'content',
     `Sorry, this email didn't format correctly. Please contact the person who sent you this for help and more information. You can delete this email (or keep it, we won't mind).\n\nERR: html fail-- to content.`
   )
-  if (sent != false) {
+  if (sent != true) {
     await fetch('https://emailserver.prestonkwei.com/email', {
       method: 'post',
       body: form,
