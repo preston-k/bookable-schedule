@@ -59,7 +59,7 @@ async function checkInvite() {
 }
 checkInvite()
 
-
+let sent = false
 document.querySelector('#button-hp8tv').addEventListener('click', async () => {
   document.querySelector('#loader-wrap').style.display = 'flex'
   console.log('book')
@@ -82,11 +82,13 @@ document.querySelector('#button-hp8tv').addEventListener('click', async () => {
     'content',
     `Sorry, this email didn't format correctly. Please contact the person who sent you this for help and more information. You can delete this email (or keep it, we won't mind).\n\nERR: html fail-- to content.`
   )
-  await fetch('https://emailserver.prestonkwei.com/email', {
-    method: 'post',
-    body: form,
-  }).catch(() => {})
-  
+  if (sent != false) {
+    await fetch('https://emailserver.prestonkwei.com/email', {
+      method: 'post',
+      body: form,
+    }).catch(() => {})
+    
+  }
   // FINAL STEP NOTHING BELOW
   window.location.replace(`/confirmed.html?passthrough=${JSON.stringify(data)}`)
 })
