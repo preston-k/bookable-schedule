@@ -100,7 +100,7 @@ document.querySelector('#verify-rkyev').addEventListener('click', async () => {
   })
   console.log(invitelist)
   const data = new FormData()
-  data.set('sendto', document.querySelector('#input-8tka6').value + ',' + document.querySelector('#input-csc2e').value )
+  data.set('sendto', document.querySelector('#input-8tka6').value )
   data.set('from', document.querySelector('#input-csc2e').value)
   data.set('subject', `${document.querySelector('#input-5ytqq').value} has suggested meeting sometime soon!`)
   data.set(
