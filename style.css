@@ -610,18 +610,58 @@ body {
 .flex-wh27o {
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  position: relative;
 }
 .calendar-movebut {
   user-select: none;
   cursor: pointer;
   /* border: 2px solid black; */
-  width: 100px;
   display: flex;
+  width: 110px;
   justify-content: center;
   align-items: center;
-  padding: 2px;
-  border-radius: 10px;
+  padding: 5px 3px;
+  border-radius: 8px;
   background-color: rgb(150, 194, 255);
+}
+
+#error-modal {
+  user-select: none;
+  font-family: 'Poppins';
+}
+
+#modalbody {
+  font-family: 'Poppins';
+  font-size: 16px;
+}
+.bg-blue-modal {
+  background-color: rgb(150, 194, 255);
+  font-family: 'Poppins';
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.footer-text {
+  font-size: 8px;
+  margin: 0 5px 5px 0;
+}
+
+.legallink {
+  color: blue;
+}
+
+#back,
+#forward {
+  position: absolute;
+}
+#back {
+  left: 10px;
+}
+#forward {
+  right: 10px;
 }

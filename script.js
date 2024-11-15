@@ -32,7 +32,7 @@ let daysInMonth = dayCount(year, month)
 let id = urlParams.get('id')
 let max = 10
 document.querySelector('#back').addEventListener('click', () => {
-  if (max > 6) {
+  if (max > 4) {
     max -= 1
     currentMonth--
     if (currentMonth < 0) {
@@ -41,7 +41,8 @@ document.querySelector('#back').addEventListener('click', () => {
     }
     updateCalendar()
   } else {
-    alert("Sorry, you can't go back that far!")
+    document.querySelector('#modalbody').innerHTML = "Sorry, you can't go back more than 6 months! Plus, why would you need to look back that far anyways?!"
+    new bootstrap.Modal(document.querySelector('#error-modal')).show()
   }
 })
 
@@ -55,7 +56,8 @@ document.querySelector('#forward').addEventListener('click', () => {
     }
     updateCalendar()
   } else {
-    alert("Sorry, you can't go that far ahead.")
+    document.querySelector('#modalbody').innerHTML = "Sorry, you can't book anything more than 6 months ahead. If you need to book something further in advance, please contact your host."
+    new bootstrap.Modal(document.querySelector('#error-modal')).show()
   }
 })
 
