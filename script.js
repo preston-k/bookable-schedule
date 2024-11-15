@@ -111,7 +111,7 @@ async function checkInvite() {
       from = info['details']['from']
       suggestList = ''
       Object.values(info.suggest).forEach((obj) => {
-        suggestList += `<a class='link-lruhj' href='/book.html?passthrough=${id}&action=book&passfrom=${obj.id}'><div class='suggested-timebox'> <div class='fbsyq'> <span class='material-symbols-outlined'> arrow_forward_ios </span> </div> <div class='suggested-timebox-date'> <img src='https://cdn.prestonkwei.com/calendaricon-black-small.png' class='img-qi5s' alt='Calendar Icon' draggable='false'> <p><span>${obj.date}</span></p> </div> <div class='suggested-timebox-time'> <img src='https://cdn.prestonkwei.com/clockicon-black-small.png' class='img-4od9' alt='Clock Icon' draggable='false'> <p><span>${obj.time}</span></p> </div> </div></a>`
+        suggestList += `<a class='link-lruhj' href='/book.html?passthrough=${id}&action=book&passfrom=${obj.id}'><div class='suggested-timebox'> <div class='fbsyq'> <span class='material-symbols-outlined'> arrow_forward_ios </span> </div> <div class='suggested-timebox-date'> <img src='https://cdn.prestonkwei.com/calendaricon-black-small.png' class='img-qi5s' alt='Calendar Icon' draggable='false'> <p class='label-h82x5'><span>${obj.date}</span></p> </div> <div class='suggested-timebox-time'> <img src='https://cdn.prestonkwei.com/clockicon-black-small.png' class='img-4od9' alt='Clock Icon' draggable='false'> <p class='label-h82x5'><span>${obj.time}</span></p> </div> </div></a>`
       })
       suggestList = suggestList.replace(/undefined/g, '')
       document.querySelector('#pdufa').innerHTML = suggestList

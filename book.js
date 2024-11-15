@@ -83,3 +83,7 @@ document.querySelector('#button-hp8tv').addEventListener('click', async () => {
   // FINAL STEP NOTHING BELOW
   window.location.replace(`/confirmed.html?passthrough=${JSON.stringify(data)}`)
 })
+
+document.querySelector('#book-btc').addEventListener('click', () => {
+  window.location.href = `/?id=${urlParams.get('passthrough')}`
+})
